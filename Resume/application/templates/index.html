@@ -1,0 +1,69 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Montserrat&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header>
+
+        <nav class="nav-bar">
+
+            <div class="logo">
+                <h1>logo</h1>
+            </div>
+
+            <div class="nav-items">
+                <ul>
+                    <a href="#">
+                        <li>About</li>
+                    </a>
+                    <a href="#">
+                        <li>Make</li>
+                    </a>
+                    {% if user.is_authenticated %}
+                    
+                        <li>hello, {{user.first_name}}</li>
+                    
+                        <a href="logout">
+                                <li>logout</li>
+                        </a>
+                    {% else %}
+                    <a href="register">
+                        <li>Register</li>
+                    </a>
+                    <a href="login">
+                        <li>Log in</li>
+                    </a>
+                    {% endif %}
+                    
+                    <a href="#">
+                            <li>Our partners</li>
+                    </a>
+
+                </ul>
+            </div>
+            
+
+        </nav>
+
+        <div class="content-image">
+
+            <img src="{% static 'img/2638zc286.svg' %}">
+
+        </div>
+        <div class="bg">
+            <img src="{% static 'img/real.png' %}">
+        </div>
+
+    </header>
+    
+</body>
+</html>
